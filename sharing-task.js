@@ -51,18 +51,17 @@ attendeeBadge("Alice", "speaker");
 // - Applies a 10% discount if attendees exceed 100.
 // - Returns the total cost.
 
-function attendeeCost(attendees, costPerAttendees) {
-    let totalCost = attendees * costPerAttendees
-
-    if (attendees > 100) {
-        totalCost *= 0.9;
-        return totalCost;
+function attendeeCost(numAttendees, costPerAttendee) {
+    let totalCost = numAttendees * costPerAttendee;
+    if (numAttendees > 100) {
+        let discountCost = totalCost * 0.9; // apply discount
+        return discountCost;
     } else {
-        costPerAttendees;
+        return totalCost; // no discount
     }
 }
-attendeeCost(4, 30);
-console.log(`Total cost: ${attendeeCost(4, 30)}`);
+attendeeCost(140, 30);
+console.log(`Total cost: ${attendeeCost(140, 30)}`);
 
 // Steps:
 // 1. Multiply attendees by cost.
@@ -81,7 +80,6 @@ console.log(`Total cost: ${attendeeCost(4, 30)}`);
 // Steps:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
-
 
 // ============================================
 // 🧠 Collaborative Steps
