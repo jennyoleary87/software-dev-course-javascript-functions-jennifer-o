@@ -32,26 +32,26 @@ This activity reinforces:
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
-// Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
+// // Script 1 - Greeting multiple users
+// console.log("Welcome, Alice!");
+// console.log("Welcome, Bob!");
+// console.log("Welcome, Charlie!");
 
-// Script 2 - Sum calculation
-let num1 = 5, num2 = 10;
-let sum = num1 + num2;
-console.log("The sum of 5 and 10 is " + sum);
+// // Script 2 - Sum calculation
+// let num1 = 5, num2 = 10;
+// let sum = num1 + num2;
+// console.log("The sum of 5 and 10 is " + sum);
 
-// Script 3 - Product calculation
-let product = num1 * num2;
-console.log("The product of 5 and 10 is " + product);
+// // Script 3 - Product calculation
+// let product = num1 * num2;
+// console.log("The product of 5 and 10 is " + product);
 
-// Script 4 - Print names from a list
-let names = ["Alice", "Bob", "Charlie"];
-console.log("Names in the list:");
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
-}
+// // Script 4 - Print names from a list
+// let names = ["Alice", "Bob", "Charlie"];
+// console.log("Names in the list:");
+// for (let i = 0; i < names.length; i++) {
+//     console.log(names[i]);
+// }
 
 /*
 ===========================================
@@ -72,3 +72,49 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+// 1. Greeting Multiple Users
+function greet(name) { // name of function is greet, parameter is name
+   console.log("Welcome, " + name + "!");
+   // console.log(`Welcome, ${name}!`); // this is a template literal
+} // functions don't need a semicolon at the end
+greet("Alice");
+greet("Bob");
+greet("Charlie");
+
+console.log("====================================");
+
+// 2. Sum Calculation
+function calculateSum(num1, num2) {
+   return num1 + num2;
+}
+// function printSum(num1, num2) {
+//    // let sum = calculateSum(num1, num2);
+//    console.log(`The sum of ${num1} and ${num2} is ${calculateSum(num1, num2)}. `);
+// }
+let sumResult = calculateSum(5, 10);
+console.log("The sum of 5 and 10 is " + sumResult);
+
+console.log("====================================");
+
+// 3. Product Calculation
+function calculateProduct(numA, numB) {
+   return numA * numB;
+   // (numA, numB) MEANS numA * numB; 
+}
+let productResult = calculateProduct(5, 10);
+console.log("The product of 5 and 10 is " + productResult);
+// console.log(`The product of ${numA} and ${numB} is ${calculateProduct(numA, numB)}.`);
+
+console.log("====================================");
+
+// 4. Print Names from a List
+function printNamesArray(array) {
+   console.log("Names in the list:");
+   for (let i = 0; i < array.length; i++) {
+      console.log(array[i]);
+   }
+}
+let namesList = ["Alice", "Bob", "Charlie"];
+printNamesArray(namesList);
+
