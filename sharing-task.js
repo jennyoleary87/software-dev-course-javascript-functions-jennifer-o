@@ -36,6 +36,12 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+function attendeeBadge(name, role) {
+    // Format the role to be capitalized
+    let formattedRole = role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
+    console.log(`Name: ${name}, Role: ${formattedRole}`);
+}
+attendeeBadge("Alice", "speaker");
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -45,12 +51,24 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Applies a 10% discount if attendees exceed 100.
 // - Returns the total cost.
 
+function attendeeCost(attendees, costPerAttendees) {
+    let totalCost = attendees * costPerAttendees
+
+    if (attendees > 100) {
+        totalCost *= 0.9;
+        return totalCost;
+    } else {
+        costPerAttendees;
+    }
+}
+attendeeCost(4, 30);
+console.log(`Total cost: ${attendeeCost(4, 30)}`);
+
 // Steps:
 // 1. Multiply attendees by cost.
 // 2. Check if attendee count is over 100.
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
-
 
 // ============================================
 // 🧩 Task 3: Validate Email
@@ -89,3 +107,4 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
