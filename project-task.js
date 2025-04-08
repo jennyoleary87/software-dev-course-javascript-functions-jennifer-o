@@ -118,3 +118,6 @@ function printNamesArray(array) {
 let namesList = ["Alice", "Bob", "Charlie"];
 printNamesArray(namesList);
 
+// for (let name of names) {
+//    greet(name);
+// }
