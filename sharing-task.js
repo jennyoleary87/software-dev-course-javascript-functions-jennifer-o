@@ -38,8 +38,9 @@ reusable functions that solve specific tasks. This activity encourages:
 
 function attendeeBadge(name, role) {
     // Format the role to be capitalized
+    let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
     let formattedRole = role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
-    console.log(`Name: ${name}, Role: ${formattedRole}`);
+    console.log(`Name: ${formattedName}, Role: ${formattedRole}`);
 }
 attendeeBadge("Alice", "speaker");
 
@@ -51,17 +52,27 @@ attendeeBadge("Alice", "speaker");
 // - Applies a 10% discount if attendees exceed 100.
 // - Returns the total cost.
 
-function attendeeCost(numAttendees, costPerAttendee) {
-    let totalCost = numAttendees * costPerAttendee;
-    if (numAttendees > 100) {
-        let discountCost = totalCost * 0.9; // apply discount
-        return discountCost;
+// function attendeeCost(numAttendees, costPerAttendee) {
+//     let totalCost = numAttendees * costPerAttendee;
+//     if (numAttendees > 100) {
+//         let discountCost = totalCost * 0.9; // apply discount
+//         return discountCost;
+//     } else {
+//         return totalCost; // no discount
+//     }
+// }
+// attendeeCost(140, 30);
+// console.log(`Total cost: ${attendeeCost(140, 30)}`);
+
+function attendeeCost(attendees, costPerAttendee) {
+
+    if (attendees > 100) {  // if attendees is 100 or more, 10% discount
+        return attendees * costPerAttendee * .9
     } else {
-        return totalCost; // no discount
+        return attendees * costPerAttendee
     }
 }
-attendeeCost(140, 30);
-console.log(`Total cost: ${attendeeCost(140, 30)}`);
+console.log(attendeeCost(110, 80));
 
 // Steps:
 // 1. Multiply attendees by cost.
@@ -76,6 +87,12 @@ console.log(`Total cost: ${attendeeCost(140, 30)}`);
 // - Takes an email string as input.
 // - Returns true if the email contains both "@" and "." characters.
 // - Returns false otherwise.
+
+function isEmailValid(email) {
+    return email.includes("@") && email.includes(".")
+}
+
+console.log(isEmailValid('jenniferoleary@launchcode.com'));
 
 // Steps:
 // 1. Check if the string includes both "@" and ".".
@@ -105,4 +122,3 @@ console.log(`Total cost: ${attendeeCost(140, 30)}`);
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
-
