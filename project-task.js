@@ -103,6 +103,7 @@ function calculateProduct(numA, numB) {
    // (numA, numB) MEANS numA * numB; 
 }
 let productResult = calculateProduct(5, 10);
+// SOLUTION: let num1 = 5, num2 = 10;
 console.log("The product of 5 and 10 is " + productResult);
 // console.log(`The product of ${numA} and ${numB} is ${calculateProduct(numA, numB)}.`);
 
